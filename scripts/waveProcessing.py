@@ -130,7 +130,7 @@ mi=int(1000*mi/ma)
 x=[ma*i/1000 for i in range(950, mi+51)]
 y=[args[0]*x[i]+args[1] for i in range(0, mi-899)]
 fig, ax = plt.subplots()
-ax.plot(x, y, linestyle='-', linewidth = 1.5,  color= 'orchid', label='ln(velocity)=({0:.4f}±{2:.4f})ln(heigth)+({1:.4f}±{3:.4f})\ng≈{4:.4f} — {5:.4f} м/с^2'.format(args[0], args[1], args[2], args[3], 2*m.exp(args[1]-args[3]), 2*m.exp(args[1]+args[3])), zorder=1)
+ax.plot(x, y, linestyle='-', linewidth = 1.5,  color= 'orchid', label='ln(velocity)=({0:.4f}±{2:.4f})ln(heigth)+({1:.4f}±{3:.4f})\ng≈{4:.4f} — {5:.4f} м/с^2'.format(args[0], args[1], args[2], args[3], m.exp(2*(args[1]-args[3])), m.exp(2*(args[1]+args[3]))), zorder=1)
 ax.scatter(heigtl, vell, s=7, c='navy', label='Логарифмы скоростей возмущений при различных логарифмах начальных уровней воды', zorder=2)
 ax.set_ylabel('ln(velocity), ln(м/с)')
 ax.set_xlabel('ln(height), ln(м)')
